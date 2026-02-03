@@ -1,18 +1,19 @@
 /* Bavaria Events - Public Frontend Styles - Horizontal Row Layout */
 
 .bavaria-events-container {
-    padding: 40px 20px;
-    max-width: 1200px;
+    padding: 40px 0px;
+    /* max-width: 1200px; */
+    width: 100%;
     margin: 0 auto;
+    font-family: "Instrument Sans", Arial, Helvetica, sans-serif;
 }
 
 .bavaria-events-list {
     display: flex;
     flex-direction: column;
     gap: 0;
-    border: 1px solid #e6eaf0;
-    border-radius: 4px;
     overflow: hidden;
+    width: 100%;
 }
 
 /* Event Row - ALL ON ONE LINE */
@@ -24,7 +25,7 @@
     color: inherit;
     padding: 18px 20px !important;
     border: none;
-    border-bottom: 1px solid #e6eaf0;
+    border-bottom: 1px solid #e0e0e0;
     transition: border-bottom-color 0.3s ease;
     width: 100%;
     box-sizing: border-box;
@@ -89,6 +90,7 @@
     font-size: 16px;
     flex-shrink: 0;
     transition: color 0.3s ease;
+    color: #004fa1;
 }
 
 .event-row:hover .event-date-icon,
@@ -100,7 +102,7 @@
 .event-title {
     font-size: 15px;
     font-weight: 600;
-    color: #003562;
+    color: #004fa1;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -111,7 +113,7 @@
 .event-date,
 .event-location {
     font-size: 14px;
-    color: #555;
+    color: #004fa1;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -199,30 +201,44 @@
 @media (max-width: 768px) {
     .event-row {
         padding: 14px 12px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        position: relative;
     }
 
     .event-row-content {
-        gap: 0;
+        gap: 8px;
+        flex-direction: column !important;
+        width: 100%;
     }
 
     .event-column {
         gap: 6px;
+        width: 100%;
     }
 
     .event-title-col {
-        flex: 0 0 40% !important;
+        flex: 1 !important;
+        width: 100%;
     }
 
     .event-date-col {
-        flex: 0 0 20% !important;
+        flex: 1 !important;
+        width: 100%;
     }
 
     .event-location-col {
-        flex: 0 0 20% !important;
+        flex: 1 !important;
+        width: 100%;
     }
 
     .event-arrow-col {
-        flex: 0 0 20% !important;
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+        flex: 0 !important;
+        width: auto;
+        justify-content: flex-end;
     }
 
     .event-title {
@@ -247,24 +263,46 @@
 @media (max-width: 600px) {
     .event-row {
         padding: 12px 8px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        position: relative;
+    }
+
+    .event-row-content {
+        gap: 8px;
+        flex-direction: column !important;
+        width: 100%;
+    }
+
+    .event-column {
+        gap: 6px;
+        width: 100%;
+        flex-direction: row !important;
     }
 
     .event-title-col {
-        flex: 0 0 45% !important;
+        flex: 1 !important;
+        width: 100%;
     }
 
     .event-date-col {
-        flex: 0 0 18% !important;
+        flex: 1 !important;
+        width: 100%;
     }
 
     .event-location-col {
-        display: none;
+        flex: 1 !important;
+        width: 100%;
+        display: flex !important;
     }
 
     .event-arrow-col {
-        flex: 0 0 37% !important;
-        justify-content: space-between;
-        align-items: center;
+        position: absolute;
+        bottom: 12px;
+        right: 8px;
+        flex: 0 !important;
+        width: auto;
+        justify-content: flex-end;
     }
 
     .event-date,
@@ -280,23 +318,46 @@
 @media (max-width: 480px) {
     .event-row {
         padding: 10px 6px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        position: relative;
+    }
+
+    .event-row-content {
+        gap: 8px;
+        flex-direction: column !important;
+        width: 100%;
+    }
+
+    .event-column {
+        gap: 6px;
+        width: 100%;
+        flex-direction: row !important;
     }
 
     .event-title-col {
-        flex: 0 0 50% !important;
+        flex: 1 !important;
+        width: 100%;
     }
 
     .event-date-col {
-        flex: 0 0 50% !important;
+        flex: 1 !important;
+        width: 100%;
     }
 
     .event-location-col {
-        display: none;
+        flex: 1 !important;
+        width: 100%;
+        display: flex !important;
     }
 
     .event-arrow-col {
         position: absolute;
+        bottom: 10px;
         right: 6px;
+        flex: 0 !important;
+        width: auto;
+        justify-content: flex-end;
     }
 
     .event-title {
