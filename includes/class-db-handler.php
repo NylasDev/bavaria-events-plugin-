@@ -22,9 +22,10 @@ class Bavaria_Events_DB_Handler {
 			end_date DATE NOT NULL,
 			location VARCHAR(255) NOT NULL,
 			location_ro VARCHAR(255),
-			event_link VARCHAR(512) NOT NULL UNIQUE KEY idx_event_link,
+			event_link VARCHAR(512) NOT NULL,
 			created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 			updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+			UNIQUE KEY idx_event_link (event_link),
 			KEY idx_start_date (start_date),
 			KEY idx_location (location),
 			KEY idx_end_date (end_date)
@@ -46,11 +47,12 @@ class Bavaria_Events_DB_Handler {
 		$cache_table = "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}bavaria_translation_cache (
 			id BIGINT(20) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 			source_text LONGTEXT NOT NULL,
-			source_hash VARCHAR(64) NOT NULL UNIQUE KEY idx_source_hash,
+			source_hash VARCHAR(64) NOT NULL,
 			translated_text LONGTEXT NOT NULL,
 			source_lang VARCHAR(5) DEFAULT 'en',
 			target_lang VARCHAR(5) DEFAULT 'ro',
 			created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+			UNIQUE KEY idx_source_hash (source_hash),
 			KEY idx_created_at (created_at)
 		) $charset_collate;";
 
