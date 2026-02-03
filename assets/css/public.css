@@ -17,63 +17,68 @@
 
 /* Event Row - ALL ON ONE LINE */
 .event-row {
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
     text-decoration: none;
     color: inherit;
-    padding: 18px 20px;
+    padding: 18px 20px !important;
+    border: none;
     border-bottom: 1px solid #e6eaf0;
-    transition: background-color 0.3s ease, border-bottom-color 0.3s ease;
+    transition: border-bottom-color 0.3s ease;
     width: 100%;
     box-sizing: border-box;
-}
-
-.event-row:hover {
-    background-color: #004fa1;
-    border-bottom-color: #004fa1;
+    background: transparent !important;
 }
 
 .event-row:last-child {
     border-bottom: none;
 }
 
+.event-row:hover {
+    border-bottom-color: #004fa1;
+}
+
 .event-row-content {
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
     width: 100%;
     gap: 0;
-    flex-wrap: nowrap;
+    flex-wrap: nowrap !important;
 }
 
 /* Columns - Fixed widths for consistency */
 .event-column {
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
     gap: 10px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    background: transparent !important;
 }
 
 .event-title-col {
-    flex: 0 0 35%;
+    flex: 0 0 35% !important;
     min-width: 0;
 }
 
 .event-date-col {
-    flex: 0 0 25%;
+    flex: 0 0 25% !important;
     min-width: 0;
     gap: 8px;
 }
 
 .event-location-col {
-    flex: 0 0 25%;
+    flex: 0 0 25% !important;
     min-width: 0;
     gap: 8px;
 }
 
 .event-arrow-col {
-    flex: 0 0 15%;
+    flex: 0 0 15% !important;
     justify-content: flex-end;
     padding-right: 10px;
 }
@@ -88,7 +93,7 @@
 
 .event-row:hover .event-date-icon,
 .event-row:hover .event-location-icon {
-    color: #ffffff;
+    color: #004fa1;
 }
 
 /* Typography */
@@ -100,6 +105,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     transition: color 0.3s ease;
+    background: transparent !important;
 }
 
 .event-date,
@@ -110,12 +116,13 @@
     overflow: hidden;
     text-overflow: ellipsis;
     transition: color 0.3s ease;
+    background: transparent !important;
 }
 
 .event-row:hover .event-title,
 .event-row:hover .event-date,
 .event-row:hover .event-location {
-    color: #ffffff;
+    color: #004fa1;
 }
 
 .event-arrow {
@@ -130,7 +137,7 @@
 .event-row:hover .event-arrow {
     opacity: 1;
     transform: translateX(3px);
-    color: #ffffff;
+    color: #004fa1;
 }
 
 .event-row-divider {
@@ -164,19 +171,19 @@
 
 @media (max-width: 1024px) {
     .event-title-col {
-        flex: 0 0 38%;
+        flex: 0 0 38% !important;
     }
 
     .event-date-col {
-        flex: 0 0 23%;
+        flex: 0 0 23% !important;
     }
 
     .event-location-col {
-        flex: 0 0 23%;
+        flex: 0 0 23% !important;
     }
 
     .event-arrow-col {
-        flex: 0 0 16%;
+        flex: 0 0 16% !important;
     }
 
     .event-title {
@@ -191,7 +198,7 @@
 
 @media (max-width: 768px) {
     .event-row {
-        padding: 14px 12px;
+        padding: 14px 12px !important;
     }
 
     .event-row-content {
@@ -203,19 +210,19 @@
     }
 
     .event-title-col {
-        flex: 0 0 40%;
+        flex: 0 0 40% !important;
     }
 
     .event-date-col {
-        flex: 0 0 20%;
+        flex: 0 0 20% !important;
     }
 
     .event-location-col {
-        flex: 0 0 20%;
+        flex: 0 0 20% !important;
     }
 
     .event-arrow-col {
-        flex: 0 0 20%;
+        flex: 0 0 20% !important;
     }
 
     .event-title {
@@ -239,15 +246,15 @@
 
 @media (max-width: 600px) {
     .event-row {
-        padding: 12px 8px;
+        padding: 12px 8px !important;
     }
 
     .event-title-col {
-        flex: 0 0 45%;
+        flex: 0 0 45% !important;
     }
 
     .event-date-col {
-        flex: 0 0 18%;
+        flex: 0 0 18% !important;
     }
 
     .event-location-col {
@@ -255,7 +262,7 @@
     }
 
     .event-arrow-col {
-        flex: 0 0 37%;
+        flex: 0 0 37% !important;
         justify-content: space-between;
         align-items: center;
     }
@@ -272,15 +279,15 @@
 
 @media (max-width: 480px) {
     .event-row {
-        padding: 10px 6px;
+        padding: 10px 6px !important;
     }
 
     .event-title-col {
-        flex: 0 0 50%;
+        flex: 0 0 50% !important;
     }
 
     .event-date-col {
-        flex: 0 0 50%;
+        flex: 0 0 50% !important;
     }
 
     .event-location-col {
