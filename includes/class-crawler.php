@@ -109,21 +109,26 @@ class Bavaria_Events_Crawler {
 		$xpath  = new DOMXPath( $dom );
 		$events = [];
 
-		// Find all event item containers - new selector for current Bavaria site
-		$event_items = $xpath->query( "//a[contains(@class, 'event__event') and @href]" );
+		// Find all event item containers - div with event__event class, then get child <a>
+		$event_divs = $xpath->query( "//div[contains(@class, 'event__event')]" );
 
-		foreach ( $event_items as $item ) {
-			$event = self::extract_event_data( $item, $xpath );
+		foreach ( $event_divs as $div ) {
+			// Get the <a> tag inside the div
+			$link = $xpath->query( ".//a[@href]", $div )->item( 0 );
+			
+			if ( $link ) {
+				$event = self::extract_event_data( $link, $xpath );
 
-			if ( ! empty( $event['event_title'] ) && ! empty( $event['event_link'] ) ) {
-				$events[] = $event;
+				if ( ! empty( $event['event_title'] ) && ! empty( $event['event_link'] ) ) {
+					$events[] = $event;
+				}
 			}
 		}
 
 		// If no events found, try alternative selector (for older Bavaria site structure)
 		if ( empty( $events ) ) {
 			$event_items = $xpath->query(
-				"//a[contains(@class, 'event-wrapper') or contains(@class, 'content-item') and contains(@class, 'main-event')]"
+				"//a[contains(@class, 'event-wrapper') or (contains(@class, 'content-item') and contains(@class, 'main-event'))]"
 			);
 
 			foreach ( $event_items as $item ) {
