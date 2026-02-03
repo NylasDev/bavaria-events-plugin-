@@ -1,0 +1,77 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    PUSH INSTRUCTIONS FOR GITHUB REPO                       ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+The plugin code is ready to push. Follow these steps:
+
+OPTION 1: Using HTTPS (if 2FA not enabled):
+═══════════════════════════════════════════════════════════════════════════
+
+  cd /home/nylas/bavaria-events-plugin
+  git push origin main
+
+  When prompted:
+  - Username: your-github-username
+  - Password: your-github-password (or personal access token)
+
+OPTION 2: Using GitHub CLI (Recommended):
+═══════════════════════════════════════════════════════════════════════════
+
+  # Install GitHub CLI if not already installed
+  gh auth login
+  # Follow the prompts to authenticate
+
+  # Then push
+  cd /home/nylas/bavaria-events-plugin
+  git push origin main
+
+OPTION 3: Using SSH (Most Secure):
+═══════════════════════════════════════════════════════════════════════════
+
+  # Generate SSH key (if not done)
+  ssh-keygen -t ed25519 -C "your-email@example.com"
+
+  # Add public key to GitHub
+  # Settings → SSH and GPG keys → New SSH key
+  # Paste contents of ~/.ssh/id_ed25519.pub
+
+  # Change remote to SSH
+  cd /home/nylas/bavaria-events-plugin
+  git remote set-url origin git@github.com:NylasDev/bavaria-events-plugin-.git
+
+  # Push
+  git push origin main
+
+COMMITS READY TO PUSH:
+═══════════════════════════════════════════════════════════════════════════
+
+  ✅ 38c794e - Add quick installation guide
+  ✅ 4f12c6b - Initial plugin release - Full Bavaria Events Crawler
+
+REPOSITORY:
+═══════════════════════════════════════════════════════════════════════════
+
+  https://github.com/NylasDev/bavaria-events-plugin-
+
+VERIFY AFTER PUSH:
+═══════════════════════════════════════════════════════════════════════════
+
+  After push completes, verify with:
+  - git log -5 (should show your commits)
+  - git status (should show "Your branch is up to date")
+  - Visit GitHub repo to see files
+
+FILES BEING PUSHED:
+═══════════════════════════════════════════════════════════════════════════
+
+  15 total files:
+  • 1 main plugin file
+  • 8 PHP classes
+  • 2 CSS files
+  • 1 HTML template
+  • 3 documentation files
+  • Configuration files
+
+TOTAL CODE SIZE: ~2,300+ lines of production-ready PHP
+
+═══════════════════════════════════════════════════════════════════════════

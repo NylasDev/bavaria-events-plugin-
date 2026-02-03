@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Bavaria Events Crawler
- * Plugin URI: https://github.com/NylasDev/bavaria-events-plugin-
+ * Plugin URI: https://thevikingcompany.eu
  * Description: Automatically crawls events from Bavaria Yachts website and displays them in a formatted table on your WordPress site with English-to-Romanian translation support.
  * Version: 1.0.0
- * Author: Nylas Dev
- * Author URI: https://github.com/NylasDev
+ * Author: The Viking Company
+ * Author URI: https://thevikingcompany.eu
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Domain Path: /languages
