@@ -39,8 +39,9 @@ $labels = isset( $lang_labels[ $language ] ) ? $lang_labels[ $language ] : $lang
 						<span class="event-title"><?php echo esc_html( $event->event_title ); ?></span>
 					</div>
 
-					<!-- Date Column -->
+					<!-- Date Column with Icon -->
 					<div class="event-column event-date-col">
+						<span class="event-date-icon">📅</span>
 						<span class="event-date">
 							<?php 
 								$start = DateTime::createFromFormat( 'Y-m-d', $event->start_date );
@@ -52,8 +53,9 @@ $labels = isset( $lang_labels[ $language ] ) ? $lang_labels[ $language ] : $lang
 						</span>
 					</div>
 
-					<!-- Location Column -->
+					<!-- Location Column with Icon -->
 					<div class="event-column event-location-col">
+						<span class="event-location-icon">📍</span>
 						<span class="event-location"><?php echo esc_html( $event->location ); ?></span>
 					</div>
 
